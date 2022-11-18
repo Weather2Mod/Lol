@@ -141,7 +141,7 @@ RS.MouseButton1Down:Connect(function()
 end)
 
 LIY.MouseButton1Down:Connect(function()
-	
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 
 SS.MouseButton1Down:Connect(function()
