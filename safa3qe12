@@ -1,22 +1,27 @@
---rklsjg
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
 
 local OhioEggsGui = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
 local UIGradient = Instance.new("UIGradient")
 local TopBar = Instance.new("TextLabel")
-local UIGradient_2 = Instance.new("UIGradient")
 local UICorner_2 = Instance.new("UICorner")
-local Close = Instance.new("TextButton")
+local Minimize = Instance.new("TextButton")
 local UICorner_3 = Instance.new("UICorner")
-local Speed = Instance.new("TextBox")
+local Close = Instance.new("TextButton")
 local UICorner_4 = Instance.new("UICorner")
-local RS = Instance.new("TextButton")
+local UIGradient_2 = Instance.new("UIGradient")
+local Speed = Instance.new("TextBox")
 local UICorner_5 = Instance.new("UICorner")
-local LIY = Instance.new("TextButton")
-local UICorner_6 = Instance.new("UICorner")
 local SS = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local LIY = Instance.new("TextButton")
 local UICorner_7 = Instance.new("UICorner")
+local RS = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
 
 --Properties:
 
@@ -28,8 +33,8 @@ main.Parent = OhioEggsGui
 main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 main.Position = UDim2.new(0.359752327, 0, 0.438271612, 0)
 main.Size = UDim2.new(0, 565, 0, 291)
-main.Draggable = true
 main.Active = true
+main.Draggable = true
 
 UICorner.Parent = main
 
@@ -41,18 +46,27 @@ TopBar.Parent = main
 TopBar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TopBar.Size = UDim2.new(0, 565, 0, 33)
 TopBar.Font = Enum.Font.SourceSans
-TopBar.Text = "Ohio Eggs Gui | V1.0"
+TopBar.Text = "Ohio Eggs Gui | V1.1"
 TopBar.TextColor3 = Color3.fromRGB(0, 0, 0)
 TopBar.TextSize = 14.000
 
-UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 4)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(251, 255, 0))}
-UIGradient_2.Rotation = 180
-UIGradient_2.Parent = TopBar
-
 UICorner_2.Parent = TopBar
 
+Minimize.Name = "Minimize"
+Minimize.Parent = TopBar
+Minimize.BackgroundColor3 = Color3.fromRGB(41, 202, 60)
+Minimize.BorderSizePixel = 0
+Minimize.Position = UDim2.new(0.85840708, 0, 0, 0)
+Minimize.Size = UDim2.new(0, 33, 0, 33)
+Minimize.Font = Enum.Font.SourceSans
+Minimize.Text = "-"
+Minimize.TextColor3 = Color3.fromRGB(0, 0, 0)
+Minimize.TextSize = 50.000
+
+UICorner_3.Parent = Minimize
+
 Close.Name = "Close"
-Close.Parent = main
+Close.Parent = TopBar
 Close.BackgroundColor3 = Color3.fromRGB(41, 202, 60)
 Close.BorderSizePixel = 0
 Close.Position = UDim2.new(0.941592932, 0, 0, 0)
@@ -62,7 +76,11 @@ Close.Text = "X"
 Close.TextColor3 = Color3.fromRGB(0, 0, 0)
 Close.TextSize = 14.000
 
-UICorner_3.Parent = Close
+UICorner_4.Parent = Close
+
+UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 4)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(251, 255, 0))}
+UIGradient_2.Rotation = 180
+UIGradient_2.Parent = TopBar
 
 Speed.Name = "Speed"
 Speed.Parent = main
@@ -75,20 +93,20 @@ Speed.Text = ""
 Speed.TextColor3 = Color3.fromRGB(255, 255, 255)
 Speed.TextSize = 14.000
 
-UICorner_4.Parent = Speed
+UICorner_5.Parent = Speed
 
-RS.Name = "RS"
-RS.Parent = main
-RS.BackgroundColor3 = Color3.fromRGB(41, 202, 60)
-RS.BorderSizePixel = 0
-RS.Position = UDim2.new(0.610619485, 0, 0.171821311, 0)
-RS.Size = UDim2.new(0, 71, 0, 26)
-RS.Font = Enum.Font.SourceSans
-RS.Text = "Reset Speed"
-RS.TextColor3 = Color3.fromRGB(0, 0, 0)
-RS.TextSize = 14.000
+SS.Name = "SS"
+SS.Parent = main
+SS.BackgroundColor3 = Color3.fromRGB(41, 202, 60)
+SS.BorderSizePixel = 0
+SS.Position = UDim2.new(0.465486735, 0, 0.171821311, 0)
+SS.Size = UDim2.new(0, 71, 0, 26)
+SS.Font = Enum.Font.SourceSans
+SS.Text = "Set Speed"
+SS.TextColor3 = Color3.fromRGB(0, 0, 0)
+SS.TextSize = 14.000
 
-UICorner_5.Parent = RS
+UICorner_6.Parent = SS
 
 LIY.Name = "LIY"
 LIY.Parent = main
@@ -101,33 +119,55 @@ LIY.Text = "Load Infinite Yield"
 LIY.TextColor3 = Color3.fromRGB(0, 0, 0)
 LIY.TextSize = 14.000
 
-UICorner_6.Parent = LIY
+UICorner_7.Parent = LIY
 
-SS.Name = "SS"
-SS.Parent = main
-SS.BackgroundColor3 = Color3.fromRGB(41, 202, 60)
-SS.BorderSizePixel = 0
-SS.Position = UDim2.new(0.472566366, 0, 0.171821311, 0)
-SS.Size = UDim2.new(0, 71, 0, 26)
-SS.Font = Enum.Font.SourceSans
-SS.Text = "Set Speed"
-SS.TextColor3 = Color3.fromRGB(0, 0, 0)
-SS.TextSize = 14.000
+RS.Name = "RS"
+RS.Parent = main
+RS.BackgroundColor3 = Color3.fromRGB(41, 202, 60)
+RS.BorderSizePixel = 0
+RS.Position = UDim2.new(0.619469047, 0, 0.171821311, 0)
+RS.Size = UDim2.new(0, 71, 0, 26)
+RS.Font = Enum.Font.SourceSans
+RS.Text = "Reset Speed"
+RS.TextColor3 = Color3.fromRGB(0, 0, 0)
+RS.TextSize = 14.000
 
-UICorner_7.Parent = SS
+UICorner_8.Parent = RS
+
+-- Scripts:
+
+RS.MouseButton1Down:Connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
 
 LIY.MouseButton1Down:Connect(function()
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+	
 end)
 
 SS.MouseButton1Down:Connect(function()
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Speed.Text
 end)
 
-RS.MouseButton1Down:Connect(function()
-	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
-end)
-
 Close.MouseButton1Down:Connect(function()
 	OhioEggsGui:Destroy()
+end)
+
+asddsf = true
+
+Minimize.MouseButton1Down:Connect(function()
+	if asddsf == true then
+		Speed.Visible = false
+		SS.Visible = false
+		RS.Visible = false
+		LIY.Visible = false
+		game:GetService("TweenService"):Create(main,TweenInfo.new(1),{Size = UDim2.new(0, 565,0, 7)}):Play()
+		asddsf = false
+	else
+		Speed.Visible = true
+		SS.Visible = true
+		RS.Visible = true
+		LIY.Visible = true
+		game:GetService("TweenService"):Create(main,TweenInfo.new(1),{Size = UDim2.new(0, 565,0, 291)}):Play()
+		asddsf = true
+	end
 end)
